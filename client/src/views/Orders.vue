@@ -5,6 +5,8 @@
       <p>{{ t('orders.description') }}</p>
     </div>
 
+    <SubmittedOrders />
+
     <div v-if="loading" class="loading">{{ t('common.loading') }}</div>
     <div v-else-if="error" class="error">{{ error }}</div>
     <div v-else>
@@ -83,9 +85,13 @@ import { ref, onMounted, watch, computed } from 'vue'
 import { api } from '../api'
 import { useFilters } from '../composables/useFilters'
 import { useI18n } from '../composables/useI18n'
+import SubmittedOrders from '../components/SubmittedOrders.vue'
 
 export default {
   name: 'Orders',
+  components: {
+    SubmittedOrders
+  },
   setup() {
     const { t, currentCurrency, translateProductName, translateCustomerName } = useI18n()
 

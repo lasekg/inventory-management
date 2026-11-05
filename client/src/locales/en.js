@@ -6,6 +6,7 @@ export default {
     orders: 'Orders',
     finance: 'Finance',
     demandForecast: 'Demand Forecast',
+    restocking: 'Restocking',
     companyName: 'Catalyst Components',
     subtitle: 'Inventory Management System'
   },
@@ -126,6 +127,23 @@ export default {
       status: 'Status',
       expectedDelivery: 'Expected Delivery',
       actualDelivery: 'Actual Delivery'
+    },
+    submitted: {
+      title: 'Submitted Orders',
+      note: 'Submitted restock orders are not affected by the filters above or below.',
+      empty: 'No restock orders have been submitted yet.',
+      loadFailed: 'Failed to load submitted orders',
+      leadTimeDays: '{count} days',
+      unitCost: 'Unit cost',
+      table: {
+        orderNumber: 'Order Number',
+        items: 'Items',
+        status: 'Status',
+        orderDate: 'Order Date',
+        leadTime: 'Lead Time',
+        expectedDelivery: 'Expected Delivery',
+        total: 'Total'
+      }
     }
   },
 
@@ -198,12 +216,53 @@ export default {
     allMonths: 'All Months'
   },
 
+  // Restocking
+  restocking: {
+    title: 'Restocking',
+    description: 'Choose a budget to see which items to reorder, based on forecasted demand',
+    loadFailed: 'Failed to load restocking recommendations',
+    noForecasts: 'No demand forecasts are available, so there is nothing to recommend.',
+    budgetLabel: 'Restocking budget',
+    budgetRange: 'Range {min} to {max}',
+    summary: {
+      totalCost: 'Total Cost',
+      unspent: 'Unspent',
+      leadTime: 'Lead Time',
+      unfunded: 'Unfunded Items',
+      allFunded: 'All items funded',
+      unfundedCount: '{count} items not fully funded',
+      leadTimeDays: '{count} days',
+      noLeadTime: 'None'
+    },
+    updating: 'Updating...',
+    recommendations: 'Recommendations',
+    noItems: 'This budget does not buy any items. Increase the budget.',
+    partial: 'Partial',
+    quantityOf: '{quantity} of {target}',
+    table: {
+      item: 'Item',
+      sku: 'SKU',
+      trend: 'Trend',
+      quantity: 'Quantity',
+      unitCost: 'Unit Cost',
+      lineTotal: 'Line Total',
+      leadTime: 'Lead Time'
+    },
+    days: '{count} days',
+    placeOrder: 'Place Order',
+    placing: 'Placing order...',
+    orderPlaced: 'Order {orderNumber} was submitted.',
+    viewOrders: 'View in Orders',
+    orderFailed: 'Failed to place order'
+  },
+
   // Statuses
   status: {
     delivered: 'Delivered',
     shipped: 'Shipped',
     processing: 'Processing',
     backordered: 'Backordered',
+    submitted: 'Submitted',
     inStock: 'In Stock',
     lowStock: 'Low Stock',
     adequate: 'Adequate'

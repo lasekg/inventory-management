@@ -11,7 +11,16 @@ from fastapi.testclient import TestClient
 server_path = Path(__file__).parent.parent.parent / "server"
 sys.path.insert(0, str(server_path))
 
+import main
 from main import app
+
+
+@pytest.fixture(autouse=True)
+def reset_submitted_orders():
+    """Clear in-memory restocking orders so tests stay independent."""
+    main.submitted_orders.clear()
+    yield
+    main.submitted_orders.clear()
 
 
 @pytest.fixture
