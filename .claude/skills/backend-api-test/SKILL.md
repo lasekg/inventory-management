@@ -364,6 +364,12 @@ assert abs(calculated - expected) < 0.01
 - `GET /api/backlog` - Backlog items (no filters)
 - `GET /api/spending/*` - Spending data endpoints
 
+### Restocking Endpoints
+- `GET /api/restocking/recommendations` - Restocking plan for a budget
+  - Filters: `budget`
+- `GET /api/restocking/orders` - Submitted orders, newest first
+- `POST /api/restocking/orders` - Place an order from `budget` and `request_id`
+
 ## Common Values for Testing
 
 ### Warehouses

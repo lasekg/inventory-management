@@ -22,6 +22,9 @@
           <router-link to="/demand" :class="{ active: $route.path === '/demand' }">
             {{ t('nav.demandForecast') }}
           </router-link>
+          <router-link to="/restocking" :class="{ active: $route.path === '/restocking' }">
+            {{ t('nav.restocking') }}
+          </router-link>
           <router-link to="/reports" :class="{ active: $route.path === '/reports' }">
             Reports
           </router-link>
@@ -33,7 +36,7 @@
         />
       </div>
     </header>
-    <FilterBar />
+    <FilterBar v-if="$route.path !== '/restocking'" />
     <main class="main-content">
       <router-view />
     </main>
@@ -244,6 +247,16 @@ body {
   border-radius: 6px;
   transition: all 0.2s ease;
   position: relative;
+  /* Stops Japanese labels breaking between characters; English can still wrap at spaces */
+  word-break: keep-all;
+}
+
+/* Seven tabs need tighter spacing to fit beside the logo and menus */
+@media (max-width: 1440px) {
+  .nav-tabs a {
+    padding-left: 0.625rem;
+    padding-right: 0.625rem;
+  }
 }
 
 .nav-tabs a:hover {

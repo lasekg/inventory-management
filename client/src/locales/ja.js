@@ -6,6 +6,7 @@ export default {
     orders: '注文',
     finance: '財務',
     demandForecast: '需要予測',
+    restocking: '補充発注',
     companyName: '触媒コンポーネンツ',
     subtitle: '在庫管理システム'
   },
@@ -126,6 +127,23 @@ export default {
       status: 'ステータス',
       expectedDelivery: '予定配達日',
       actualDelivery: '実際の配達日'
+    },
+    submitted: {
+      title: '送信済み注文',
+      note: '送信済みの補充注文は、上下のフィルターの影響を受けません。',
+      empty: '送信済みの補充注文はまだありません。',
+      loadFailed: '送信済み注文の読み込みに失敗しました',
+      leadTimeDays: '{count}日',
+      unitCost: '単価',
+      table: {
+        orderNumber: '注文番号',
+        items: '品目',
+        status: 'ステータス',
+        orderDate: '注文日',
+        leadTime: 'リードタイム',
+        expectedDelivery: '予定配達日',
+        total: '合計'
+      }
     }
   },
 
@@ -198,12 +216,53 @@ export default {
     allMonths: 'すべての月'
   },
 
+  // Restocking
+  restocking: {
+    title: '補充発注',
+    description: '予算を選択すると、需要予測に基づいて再発注すべき品目が表示されます',
+    loadFailed: '補充の推奨内容の読み込みに失敗しました',
+    noForecasts: '需要予測がないため、推奨できる品目はありません。',
+    budgetLabel: '補充予算',
+    budgetRange: '範囲 {min} から {max}',
+    summary: {
+      totalCost: '総費用',
+      unspent: '未使用額',
+      leadTime: 'リードタイム',
+      unfunded: '未充足の品目',
+      allFunded: 'すべての品目を充足',
+      unfundedCount: '{count}件が十分に充足されていません',
+      leadTimeDays: '{count}日',
+      noLeadTime: 'なし'
+    },
+    updating: '更新中...',
+    recommendations: '推奨内容',
+    noItems: 'この予算では購入できる品目がありません。予算を増やしてください。',
+    partial: '一部',
+    quantityOf: '{quantity} / {target}',
+    table: {
+      item: '品目',
+      sku: 'SKU',
+      trend: 'トレンド',
+      quantity: '数量',
+      unitCost: '単価',
+      lineTotal: '小計',
+      leadTime: 'リードタイム'
+    },
+    days: '{count}日',
+    placeOrder: '注文する',
+    placing: '注文中...',
+    orderPlaced: '注文 {orderNumber} を送信しました。',
+    viewOrders: '注文を見る',
+    orderFailed: '注文に失敗しました'
+  },
+
   // Statuses
   status: {
     delivered: '配達済み',
     shipped: '出荷済み',
     processing: '処理中',
     backordered: 'バックオーダー',
+    submitted: '送信済み',
     inStock: '在庫あり',
     lowStock: '在庫僅少',
     adequate: '適量'
@@ -328,6 +387,13 @@ export default {
 
   // Product Names
   productNames: {
+    'Industrial Widget Type A': '産業用ウィジェット タイプA',
+    'Steel Bearing Assembly': 'スチールベアリング組立',
+    'High-Temperature Gasket': '耐熱ガスケット',
+    'Electric Motor 5HP': '電動モーター 5HP',
+    'Oil Filter Cartridge': 'オイルフィルターカートリッジ',
+    'Pressure Relief Valve': '圧力リリーフバルブ',
+    'Logic Controller Board': 'ロジックコントローラーボード',
     'Single Layer PCB Assembly': '単層PCB組立',
     'Dual Layer PCB Assembly': '二層PCB組立',
     'Multi Layer PCB Assembly': '多層PCB組立',
